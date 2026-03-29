@@ -48,6 +48,18 @@ if __name__ == '__main__':
         help = 'A boolean option.',
     )
 
+    #adds an optional keyword argument with the short and 
+    #long flags "-q" and "--quiet". When this option is 
+    #given on the command line, the demo.py script should 
+    #not print its normal output, but rather output 
+    #"Shhh. Be vewy, vewy quiet, I'm hunting wabbits...".
+    parser.add_argument(
+        '-q', '--quiet',
+        type = str,
+        default = 'Shhh. Be vewy, vewy quiet, I\'m hunting wabbits...',
+        help = 'Secret message...', 
+    )
+
     # Parse the command-line arguments into a 'dict'-like container
     args = parser.parse_args()
 
@@ -71,3 +83,4 @@ if __name__ == '__main__':
     print("Number:", args.number)
     print("Threshold:", args.threshold)
     print("I am cool?", args.i_am_cool)
+
