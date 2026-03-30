@@ -53,10 +53,11 @@ if __name__ == '__main__':
     #given on the command line, the demo.py script should 
     #not print its normal output, but rather output 
     #"Shhh. Be vewy, vewy quiet, I'm hunting wabbits...".
+    #print('Shhh. Be vewy, vewy quiet, I\'m hunting wabbits...')
     parser.add_argument(
         '-q', '--quiet',
-        type = str,
-        default = 'Shhh. Be vewy, vewy quiet, I\'m hunting wabbits...',
+        action= 'store_const',
+        const='Shhh. Be vewy, vewy quiet, I\'m hunting wabbits...',
         help = 'Secret message...', 
     )
 
@@ -83,4 +84,5 @@ if __name__ == '__main__':
     print("Number:", args.number)
     print("Threshold:", args.threshold)
     print("I am cool?", args.i_am_cool)
+    print(args.quiet)
 
